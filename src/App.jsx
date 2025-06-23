@@ -11,7 +11,7 @@ const App = () => {
         <main>
             <Nav />
             <Hero />
-            <div className="h-dvh bg-black" />
+            {/*<div className="h-dvh bg-black" />*/}
         </main>
     );
 };
