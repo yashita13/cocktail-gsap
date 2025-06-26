@@ -52,8 +52,8 @@ const Menu = () => {
             }
         })
 
-            .to('.m-left-leaf', {y:-400},0)
-            .to('.m-right-leaf', {y:400},0)
+            .to('.m-left-leaf', {y:-200},0)
+            .to('.m-right-leaf', {y:200},0)
 
     },[currentCocktail]);
 
