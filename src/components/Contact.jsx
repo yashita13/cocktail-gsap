@@ -60,6 +60,8 @@ const Contact = () => {
                     ))}
                 </div>
 
+                <br/>
+
                 <div>
                     <h3>Socials</h3>
 

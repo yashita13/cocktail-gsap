@@ -19,55 +19,55 @@ const navLinks=[
 
 const cocktailLists = [
     {
-        name: "Chapel Hill Shiraz",
-        country: "AU",
-        detail: "Battle",
-        price: "$10",
+        name: "Cosmopolitan",
+        country: "US",
+        detail: "Bottle",
+        price: "₹249",
     },
     {
-        name: "Caten Malbee",
-        country: "AU",
-        detail: "Battle",
-        price: "$49",
-    },
-    {
-        name: "Rhino Pale Ale",
-        country: "CA",
+        name: "Espresso Martini",
+        country: "UK",
         detail: "750 ml",
-        price: "$20",
+        price: "₹269",
     },
     {
-        name: "Irish Guinness",
-        country: "IE",
+        name: "Mojito",
+        country: "CU",
+        detail: "Bottle",
+        price: "₹289",
+    },
+    {
+        name: "Bloody Mary",
+        country: "UK",
         detail: "600 ml",
-        price: "$29",
+        price: "₹319",
     },
 ];
 
 const mockTailLists = [
     {
-        name: "Tropical Bloom",
-        country: "US",
-        detail: "Battle",
-        price: "$10",
-    },
-    {
-        name: "Passionfruit Mint",
-        country: "US",
-        detail: "Battle",
-        price: "$49",
-    },
-    {
-        name: "Citrus Glow",
-        country: "CA",
-        detail: "750 ml",
-        price: "$20",
-    },
-    {
-        name: "Lavender Fizz",
-        country: "IE",
+        name: "Blue Lagoon",
+        country: "EU",
         detail: "600 ml",
-        price: "$29",
+        price: "₹249",
+    },
+    {
+        name: "Cucumber Cooler",
+        country: "IN",
+        detail: "750 ml",
+        price: "₹269",
+    },
+    {
+        name: "Minty Melon",
+        country: "IN",
+        detail: "Bottle",
+        price: "₹289",
+    },
+    {
+        name: "Fruit Punch",
+        country: "UK",
+        detail: "Bottle",
+        price: "₹319",
     },
 ];
 
@@ -120,7 +120,7 @@ const socials = [
     {
         name: "Instagram",
         icon: "/images/insta.png",
-        url: "#",
+        url: "https://www.linkedin.com/in/yashita-bahrani/",
     },
     {
         name: "X (Twitter)",
