@@ -39,6 +39,9 @@ const Nav = () => {
                             </a>
                         </li>
                     ))}
+                    <a href="#">
+                    <img src="/images/cart3.png" />
+                    </a>
                 </ul>
             </div>
         </nav>

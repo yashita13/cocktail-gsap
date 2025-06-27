@@ -91,7 +91,8 @@ const Hero = () => {
 
                     <div className="view-cocktails">
                         <p className="subtitle">
-                            Every cocktail on our menu is crafted with fine spirits, creative flair, and classic balance — meant to stir your soul, not just your glass.
+                            Every cocktail on our menu is meant to stir your soul, not just your glass.
+                            <p className="text-yellow"> Visit Store | Order Online</p>
                         </p>
                         <a href="#cocktails">View cocktails</a>
                     </div>

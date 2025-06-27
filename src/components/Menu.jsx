@@ -28,6 +28,13 @@ const Menu = () => {
 
     const contentRef=useRef();
 
+
+    const [cart, setCart] = useState([]);
+    const addToCart = () => {
+        setCart(prev => [...prev, currentCocktail]);
+    };
+
+
     useGSAP(()=>{
         gsap.fromTo('#title',{opacity:0}, {opacity:1, duration:1});
         gsap.fromTo('.cocktail img',
@@ -107,12 +114,20 @@ const Menu = () => {
                 <div className="recipe">
                     <div ref={contentRef} className="info">
                         <p>Recipe for :</p>
-                        <p id="title">{currentCocktail.name}</p>
+                        <p className="mb-30" id="title">{currentCocktail.name}</p>
                     </div>
 
                     <div className="details">
                         <h2>{currentCocktail.title}</h2>
                         <p>{currentCocktail.description}</p>
+                        <button
+                            onClick={addToCart}
+                            className="mt-4 bg-white text-black font-semibold text-sm px-4 py-2 rounded hover:bg-white/90 transition-all"
+                            id="add-to-cart-btn"
+                        >
+                            + Add to Cart
+                        </button>
+
                     </div>
                 </div>
             </div>

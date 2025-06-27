@@ -8,6 +8,7 @@ import About from "./components/About.jsx";
 import Art from "./components/Art.jsx";
 import Menu from "./components/Menu.jsx";
 import Contact from "./components/Contact.jsx";
+import Order from "./components/Order.jsx";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
