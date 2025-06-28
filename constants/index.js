@@ -139,7 +139,7 @@ const allCocktails = [
         id: 1,
         name: "Classic Mojito",
         image: "/images/drink1.png",
-        title: "Simple Ingredients, Bold Flavor",
+        title: "Simple Ingredients, Bold Flavor - ₹289",
         description:
             "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
     },
@@ -147,7 +147,7 @@ const allCocktails = [
         id: 2,
         name: "Raspberry Mojito",
         image: "/images/drink2.png",
-        title: "A Zesty Classic That Never Fails",
+        title: "A Zesty Classic That Never Fails - ₹269",
         description:
             "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
     },
@@ -155,7 +155,7 @@ const allCocktails = [
         id: 3,
         name: "Violet Breeze",
         image: "/images/drink3.png",
-        title: "Simple Ingredients, Bold Flavor",
+        title: "Simple Ingredients, Bold Flavor - ₹249",
         description:
             "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
     },
@@ -163,7 +163,7 @@ const allCocktails = [
         id: 4,
         name: "Curacao Mojito",
         image: "/images/drink4.png",
-        title: "Crafted With Care, Poured With Love",
+        title: "Crafted With Care, Poured With Love - ₹319",
         description:
             "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
     },

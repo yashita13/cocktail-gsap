@@ -38,7 +38,7 @@ const Cocktails = () => {
     const renderListItem = ({ name, country, detail, price }) => (
         <li
             key={name}
-            className="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-white/20 gap-3"
+            className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-4 border-b border-white/20 gap-3 w-full"
         >
             <div className="flex-1">
                 <h3>{name}</h3>
@@ -47,11 +47,11 @@ const Cocktails = () => {
                 </p>
             </div>
 
-            <div className="flex items-center gap-6 md:gap-8 mt-2 md:mt-0">
+            <div className="w-full flex justify-between items-center sm:w-auto sm:justify-normal sm:gap-8">
                 <span className="text-white text-md whitespace-nowrap">{price}</span>
                 <span>  </span>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 ml-auto sm:ml-0">
                     <button
                         onClick={() => updateQuantity(name, -1)}
                         className="bg-white text-black w-6 h-6 rounded-full text-sm font-bold flex items-center justify-center"
