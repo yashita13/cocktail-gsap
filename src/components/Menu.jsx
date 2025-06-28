@@ -6,7 +6,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Menu = () => {
+const Menu = ({ quantities, setQuantities }) => {
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const totalCocktails=allCocktails.length;
@@ -29,9 +30,11 @@ const Menu = () => {
     const contentRef=useRef();
 
 
-    const [cart, setCart] = useState([]);
     const addToCart = () => {
-        setCart(prev => [...prev, currentCocktail]);
+        setQuantities((prev) => {
+            const current = prev[currentCocktail.name] || 0;
+            return { ...prev, [currentCocktail.name]: current + 1 };
+        });
     };
 
 
@@ -118,7 +121,9 @@ const Menu = () => {
                     </div>
 
                     <div className="details">
-                        <h2>{currentCocktail.title}</h2>
+                        <h2>
+                            {currentCocktail.title} - ₹{currentCocktail.price}
+                        </h2>
                         <p>{currentCocktail.description}</p>
                         <button
                             onClick={addToCart}

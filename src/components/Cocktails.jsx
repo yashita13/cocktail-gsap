@@ -3,8 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
 
-const Cocktails = () => {
-    const [quantities, setQuantities] = useState({});
+const Cocktails = ({ quantities, setQuantities }) => {
 
     const updateQuantity = (name, delta) => {
         setQuantities((prev) => {
@@ -48,7 +47,7 @@ const Cocktails = () => {
             </div>
 
             <div className="w-full flex justify-between items-center sm:w-auto sm:justify-normal sm:gap-8">
-                <span className="text-white text-md whitespace-nowrap">{price}</span>
+                <span className="text-white text-md whitespace-nowrap">₹{price}</span>
                 <span>  </span>
 
                 <div className="flex items-center gap-2 ml-auto sm:ml-0">

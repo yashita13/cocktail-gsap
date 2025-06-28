@@ -7,9 +7,9 @@ export const placeOrder = async (req, res) => {
         const newOrder = new Order({ items });
         await newOrder.save();
 
-        res.status(200).json({ message: "Order placed successfully", order: newOrder });
+        res.status(200).json({ message: "CartModal placed successfully", order: newOrder });
     } catch (error) {
-        console.error("Order placement error:", error);
+        console.error("CartModal placement error:", error);
         res.status(500).json({ error: "Failed to place order" });
     }
 };

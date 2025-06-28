@@ -181,6 +181,7 @@ body {
                         @apply font-modern-negra 2xl:text-3xl text-xl text-yellow;
                     }
 
+
                     p {
                         @apply text-sm;
                     }

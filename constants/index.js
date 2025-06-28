@@ -22,25 +22,25 @@ const cocktailLists = [
         name: "Cosmopolitan",
         country: "US",
         detail: "Bottle",
-        price: "₹249",
+        price: 249,
     },
     {
         name: "Espresso Martini",
         country: "UK",
         detail: "750 ml",
-        price: "₹269",
+        price: 269,
     },
     {
         name: "Mojito",
         country: "CU",
         detail: "Bottle",
-        price: "₹289",
+        price: 289,
     },
     {
         name: "Bloody Mary",
         country: "UK",
         detail: "600 ml",
-        price: "₹319",
+        price: 319,
     },
 ];
 
@@ -49,25 +49,25 @@ const mockTailLists = [
         name: "Blue Lagoon",
         country: "EU",
         detail: "600 ml",
-        price: "₹249",
+        price: 249,
     },
     {
         name: "Cucumber Cooler",
         country: "IN",
         detail: "750 ml",
-        price: "₹269",
+        price: 269,
     },
     {
         name: "Minty Melon",
         country: "IN",
         detail: "Bottle",
-        price: "₹289",
+        price: 289,
     },
     {
         name: "Fruit Punch",
         country: "UK",
         detail: "Bottle",
-        price: "₹319",
+        price: 319,
     },
 ];
 
@@ -139,7 +139,8 @@ const allCocktails = [
         id: 1,
         name: "Classic Mojito",
         image: "/images/drink1.png",
-        title: "Simple Ingredients, Bold Flavor - ₹289",
+        title: "Simple Ingredients, Bold Flavor",
+        price: 289,
         description:
             "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
     },
@@ -147,7 +148,8 @@ const allCocktails = [
         id: 2,
         name: "Raspberry Mojito",
         image: "/images/drink2.png",
-        title: "A Zesty Classic That Never Fails - ₹269",
+        title: "A Zesty Classic That Never Fails",
+        price: 269,
         description:
             "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
     },
@@ -155,7 +157,8 @@ const allCocktails = [
         id: 3,
         name: "Violet Breeze",
         image: "/images/drink3.png",
-        title: "Simple Ingredients, Bold Flavor - ₹249",
+        title: "Simple Ingredients, Bold Flavor",
+        price: 249,
         description:
             "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
     },
@@ -163,7 +166,8 @@ const allCocktails = [
         id: 4,
         name: "Curacao Mojito",
         image: "/images/drink4.png",
-        title: "Crafted With Care, Poured With Love - ₹319",
+        title: "Crafted With Care, Poured With Love",
+        price: 319,
         description:
             "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
     },
