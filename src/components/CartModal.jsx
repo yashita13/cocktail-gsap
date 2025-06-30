@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
     if (!isOpen) return null;
+
+    const [name, setName] = useState('');
+    const [contact, setContact] = useState('');
+    const [address, setAddress] = useState('');
 
     const cartItems = allItems
         .filter(item => quantities[item.name])
@@ -12,6 +16,8 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
         }));
 
     const totalAmount = cartItems.reduce((acc, item) => acc + item.total, 0);
+
+    const isFormComplete = name.trim() && contact.trim() && address.trim();
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
@@ -35,13 +41,43 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
                                 </li>
                             ))}
                         </ul>
+
+                        <div className="flex flex-col gap-3 mb-4">
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                            />
+                            <input
+                                type="tel"
+                                placeholder="Contact Number"
+                                value={contact}
+                                onChange={(e) => setContact(e.target.value)}
+                                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                            />
+                            <textarea
+                                placeholder="Delivery Address"
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                className="w-full px-3 py-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-black"
+                            />
+                        </div>
+
                         <div className="flex justify-between font-bold border-t pt-2 mb-4">
                             <span>Total</span>
                             <span>₹{totalAmount}</span>
                         </div>
+
                         <button
-                            onClick={() => onPlaceOrder(cartItems)}
-                            className="w-full bg-black text-white py-2 rounded-md hover:bg-green-400 hover:text-black transition-all duration-200 text-base font-semibold"
+                            onClick={() => onPlaceOrder(cartItems, { name, contact, address })}
+                            disabled={!isFormComplete}
+                            className={`w-full py-2 rounded-md transition-all duration-200 text-base font-semibold ${
+                                isFormComplete
+                                    ? 'bg-black text-white hover:bg-green-400 hover:text-black'
+                                    : 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                            }`}
                         >
                             Place Order
                         </button>
