@@ -25,12 +25,12 @@ const Nav = ({ onCartClick, totalCount }) => {    useGSAP(()=>{
     return (
         <nav>
             <div>
-                <a href="#home" className='flex items-center gap-2'>
+                <a href="#hero" className='flex items-center gap-2'>
                     <img src="/images/logo.png" />
                     <p>Lush Sips</p>
                 </a>
 
-                <ul className=" sm: gap-5 ">
+                <ul className="flex flex-wrap items-center gap-4 lg:gap-6 xl:gap-12">
 
                 {navLinks.map((link)=>(
                         <li key={link.id}>

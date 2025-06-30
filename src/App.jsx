@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {gsap} from "gsap";
 import {ScrollTrigger, SplitText} from "gsap/all";
+import axios from "axios";
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
 import Cocktails from "./components/Cocktails.jsx";
@@ -19,21 +20,23 @@ const App = () => {
 
     const totalCount = Object.values(quantities).reduce((acc, qty) => acc + qty, 0);
 
-    const handlePlaceOrder = async (cartItems) => {
+    const handlePlaceOrder = async (cartItems, user) => {
+        const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const totalDrinks = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
         try {
-            const res = await fetch("https://mojito-backend.onrender.com/api/orders/place-order", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ items: cartItems }),
+            const response = await axios.post("http://localhost:5000/api/orders/place-order", {
+                items: cartItems,
+                user,
+                totalAmount,
+                totalDrinks,
             });
 
-            const data = await res.json();
-            console.log("Order placed:", data);
+            console.log("Order placed:", response.data);
             alert("Order placed successfully!");
-            setQuantities({});
-            setIsCartOpen(false);
-        } catch (err) {
-            console.error("Error placing order:", err);
+        } catch (error) {
+            console.error("Error placing order:", error);
+            alert("Failed to place order");
         }
     };
 

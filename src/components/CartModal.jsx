@@ -41,6 +41,10 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
                                 </li>
                             ))}
                         </ul>
+                        <div className="flex justify-between font-bold border-t pt-2 mb-4">
+                            <span>Total (Pay on Delivery)</span>
+                            <span>₹{totalAmount}</span>
+                        </div>
 
                         <div className="flex flex-col gap-3 mb-4">
                             <input
@@ -65,10 +69,6 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
                             />
                         </div>
 
-                        <div className="flex justify-between font-bold border-t pt-2 mb-4">
-                            <span>Total</span>
-                            <span>₹{totalAmount}</span>
-                        </div>
 
                         <button
                             onClick={() => onPlaceOrder(cartItems, { name, contact, address })}
