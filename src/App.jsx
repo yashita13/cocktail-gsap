@@ -25,7 +25,7 @@ const App = () => {
         const totalDrinks = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
         try {
-            const response = await axios.post("http://localhost:5000/api/orders/place-order", {
+            const response = await axios.post("https://mojito-backend.onrender.com/api/orders/place-order", {
                 items: cartItems,
                 user,
                 totalAmount,
