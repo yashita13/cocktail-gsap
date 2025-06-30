@@ -33,7 +33,7 @@ const App = () => {
             });
 
             console.log("Order placed:", response.data);
-            alert("Order placed successfully!");
+            // alert("Order placed successfully!");
         } catch (error) {
             console.error("Error placing order:", error);
             alert("Failed to place order");

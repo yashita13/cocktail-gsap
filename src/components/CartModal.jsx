@@ -6,6 +6,8 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
     const [name, setName] = useState('');
     const [contact, setContact] = useState('');
     const [address, setAddress] = useState('');
+    const [isPlacingOrder, setIsPlacingOrder] = useState(false);
+    const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
     const cartItems = allItems
         .filter(item => quantities[item.name])
@@ -18,6 +20,19 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
     const totalAmount = cartItems.reduce((acc, item) => acc + item.total, 0);
 
     const isFormComplete = name.trim() && contact.trim() && address.trim();
+
+    const handlePlaceOrder = () => {
+        setIsPlacingOrder(true);
+        onPlaceOrder(cartItems, { name, contact, address });
+
+        setTimeout(() => {
+            alert("Order placed successfully!");
+            setIsOrderPlaced(true);
+            window.location.reload();
+        }, 500);
+    };
+
+
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
@@ -71,15 +86,21 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
 
 
                         <button
-                            onClick={() => onPlaceOrder(cartItems, { name, contact, address })}
-                            disabled={!isFormComplete}
+                            onClick={handlePlaceOrder}
+                            disabled={!isFormComplete || isPlacingOrder || isOrderPlaced}
                             className={`w-full py-2 rounded-md transition-all duration-200 text-base font-semibold ${
-                                isFormComplete
-                                    ? 'bg-black text-white hover:bg-green-400 hover:text-black'
-                                    : 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                                isOrderPlaced
+                                    ? 'bg-green-500 text-white cursor-default'
+                                    : isFormComplete && !isPlacingOrder
+                                        ? 'bg-black text-white hover:bg-green-400 hover:text-black'
+                                        : 'bg-gray-300 text-gray-600 cursor-not-allowed'
                             }`}
                         >
-                            Place Order
+                            {isOrderPlaced
+                                ? 'Order Placed ✔'
+                                : isPlacingOrder
+                                    ? 'Placing Order...'
+                                    : 'Place Order'}
                         </button>
                     </>
                 )}

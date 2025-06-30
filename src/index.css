@@ -384,3 +384,23 @@ body {
         }
     }
 }
+
+
+@media (max-width: 768px) {
+
+    #menu .recipe {
+        @apply gap-0;
+    }
+
+    #menu .recipe .info {
+        @apply mb-0;
+    }
+
+    #menu .recipe .details {
+        @apply mt-0;
+    }
+
+    #menu .cocktail img {
+        @apply h-[35vh];
+    }
+}

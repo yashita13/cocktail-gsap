@@ -115,9 +115,9 @@ const Menu = ({ quantities, setQuantities }) => {
                 </div>
 
                 <div className="recipe">
-                    <div ref={contentRef} className="info">
+                    <div className="info" ref={contentRef}>
                         <p>Recipe for :</p>
-                        <p className="mb-30" id="title">{currentCocktail.name}</p>
+                        <p className="mb-5 md:mb-0 xl:mb-30" id="title">{currentCocktail.name}</p>
                     </div>
 
                     <div className="details">
