@@ -3,10 +3,6 @@ import {gsap} from "gsap"
 import {SplitText} from "gsap/all";
 import {useMediaQuery} from "react-responsive";
 import {useRef} from "react";
-import { useEffect } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
 
 const Hero = () => {
     const videoRef=useRef();
@@ -67,16 +63,6 @@ const Hero = () => {
 
     })
 
-    useEffect(() => {
-        const onLoad = () => {
-            setTimeout(() => {
-                window.ScrollTrigger?.refresh();
-            }, 100);
-        };
-
-        window.addEventListener('load', onLoad);
-        return () => window.removeEventListener('load', onLoad);
-    }, []);
 
     return (
         <>
