@@ -87,7 +87,7 @@ const Hero = () => {
                 <div className="content">
                     <div className="space-y-5 hidden md:block">
                         <p>Shake. Sip. Savor. </p>
-                        <p className="subtitle"> Sip the Spirit <br /> of Summer </p>
+                        <p className="subtitle"> Stir your Soul <br /> with every Sip </p>
                     </div>
 
                     <div className="view-cocktails">
@@ -101,17 +101,17 @@ const Hero = () => {
             </div>
         </section>
 
-           <div className="video absolute inset-0">
-               <video
-                   ref={videoRef}
-                   src="/videos/output.mp4"
-                   muted
-                   playsInline
-                   preload="auto"
-                   // autoPlay
-                   // loop
-               />
-           </div>
+            <div className="video absolute inset-0">
+                <video
+                    ref={videoRef}
+                    src="/videos/output-1.mp4"
+                    muted
+                    playsInline
+                    preload="auto"
+                    // autoPlay
+                    // loop
+                />
+            </div>
         </>
     )
 }
