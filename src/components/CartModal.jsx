@@ -21,16 +21,27 @@ const CartModal = ({ isOpen, onClose, quantities, allItems, onPlaceOrder }) => {
 
     const isFormComplete = name.trim() && contact.trim() && address.trim();
 
-    const handlePlaceOrder = () => {
+    const handlePlaceOrder = async () => {
         setIsPlacingOrder(true);
-        onPlaceOrder(cartItems, { name, contact, address });
 
-        setTimeout(() => {
-            alert("Order placed successfully!");
-            setIsOrderPlaced(true);
-            window.location.reload();
-        }, 500);
+        try {
+            const response = await onPlaceOrder(cartItems, { name, contact, address });
+
+            if (response?.status === 200) {
+                alert("Order placed successfully!");
+                setIsOrderPlaced(true);
+                window.location.reload();
+            } else {
+                throw new Error("Failed to place order 1");
+            }
+        } catch (err) {
+            alert("Failed to place order 2");
+            console.error("Order Error:", err);
+        } finally {
+            setIsPlacingOrder(false);
+        }
     };
+
 
 
 

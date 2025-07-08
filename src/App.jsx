@@ -25,20 +25,24 @@ const App = () => {
         const totalDrinks = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
         try {
-            const response = await axios.post("https://mojito-backend.onrender.com/api/orders/place-order", {
+            const response = await axios.post("http://localhost:5000/api/orders/place-order", {
                 items: cartItems,
                 user,
                 totalAmount,
                 totalDrinks,
             });
 
-            console.log("Order placed:", response.data);
-            // alert("Order placed successfully!");
+            console.log("✅ Order placed:", response.data);
+
+            // 🔴 THIS LINE IS REQUIRED
+            return response;
         } catch (error) {
-            console.error("Error placing order:", error);
-            alert("Failed to place order");
+            console.error("❌ Order error:", error?.response?.data || error.message);
+            throw error;
         }
     };
+
+
 
     return (
         <main>
